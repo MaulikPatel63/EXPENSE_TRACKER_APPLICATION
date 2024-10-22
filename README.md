@@ -100,9 +100,9 @@ To run this project, you will need to add the following environment variables to
 
 ## 🌐 Deployment
 
-The backend is deployed on Vercel.
+The backend is deployed on Render.
 
-- **Live Backend URL :** [https://personal-blog-app-frontend-bay.vercel.app/](https://personal-blog-app-frontend-bay.vercel.app/)
+- **Live Backend URL :** [https://expense-tracker-application-zohe.onrender.com/](https://expense-tracker-application-zohe.[onrender](https://expense-tracker-application-zohe.onrender.com/).com/)
 
 
 ## API Reference
