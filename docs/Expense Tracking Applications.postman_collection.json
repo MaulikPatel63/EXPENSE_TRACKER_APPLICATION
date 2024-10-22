@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "42acb21b-c63f-49b1-b422-8c61e0445beb",
+		"name": "Expense Tracking Applications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29105713"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Maulik1\",\r\n    \"email\": \"maulik.paghadal@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"maulik.paghadal3301@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/password-reset",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"password-reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password Change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/password-reset/9fadd391cc623c54c31d048b788d8d8ef1b2cdc3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"password-reset",
+								"9fadd391cc623c54c31d048b788d8d8ef1b2cdc3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/authCheck",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"authCheck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EXPENSE",
+			"item": [
+				{
+					"name": "Add Expense",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"amount\": 250.75,\r\n    \"description\": \"Groceries at Walmart\",\r\n    \"date\": \"2024-10-01\",\r\n    \"category\": \"Food\",\r\n    \"paymentMethod\": \"credit\"\r\n  },\r\n  {\r\n    \"amount\": 500,\r\n    \"description\": \"Monthly Rent\",\r\n    \"date\": \"2024-10-05\",\r\n    \"category\": \"Housing\",\r\n    \"paymentMethod\": \"cash\"\r\n  },\r\n  {\r\n    \"amount\": 99.99,\r\n    \"description\": \"New pair of running shoes\",\r\n    \"date\": \"2024-09-20\",\r\n    \"category\": \"Clothing\",\r\n    \"paymentMethod\": \"credit\"\r\n  },\r\n  {\r\n    \"amount\": 45.99,\r\n    \"description\": \"Dinner at a restaurant\",\r\n    \"date\": \"2024-10-10\",\r\n    \"category\": \"Entertainment\",\r\n    \"paymentMethod\": \"cash\"\r\n  },\r\n  {\r\n    \"amount\": 30.5,\r\n    \"description\": \"Gas station refill\",\r\n    \"date\": \"2024-10-12\",\r\n    \"category\": \"Transportation\",\r\n    \"paymentMethod\": \"cash\"\r\n  }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/expense/expense-add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"expense-add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expense",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/expense/expense-get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"expense-get"
+							],
+							"query": [
+								{
+									"key": "paymentMethod",
+									"value": "credit",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Expense",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 50.75\r\n    // \"description\": \"Groceries at Walmart\",\r\n    // \"date\": \"2024-10-01\",\r\n    // \"category\": \"Food\",\r\n    // \"paymentMethod\": \"credit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/expense/expense-update/6717f5ca76dce4c792354a62",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"expense-update",
+								"6717f5ca76dce4c792354a62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/expense/expense-delete/6717ee34985a0dab402c4b83",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"expense-delete",
+								"6717ee34985a0dab402c4b83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Swiftrut/EXPENSE_TRACKER_APPLICATION/backend/expenses.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/expense/expense-upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"expense",
+								"expense-upload"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOnsidXNlcm5hbWUiOiJNYXVsaWsiLCJlbWFpbCI6Im1hdWxpay5wYWdoYWRhbDMzMDFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkeTF6WWlaWHVodHVONm9qd3lleU50dTN6Rm9FbTh6NHVXQ2h5N09sSzJhRnVVWFJnN1NxRjYiLCJpbWFnZSI6bnVsbCwiX2lkIjoiNjcxM2UyOWU1ZDk1OGFlOGMxZTNhNmEyIiwiY3JlYXRlZEF0IjoiMjAyNC0xMC0xOVQxNjo0NzoyNi4xMzlaIiwidXBkYXRlZEF0IjoiMjAyNC0xMC0xOVQxNjo0NzoyNi4xMzlaIiwiX192IjowfSwiaWF0IjoxNzI5MzU2NDQ2LCJleHAiOjE3Mjk5NjEyNDZ9.gUIO_vGXWqPSXUOzfSJvl3ifi-rXeDksEdYZ4kRyg5Y",
+			"type": "string"
+		}
+	]
+}
