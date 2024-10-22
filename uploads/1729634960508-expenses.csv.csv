@@ -1,0 +1,9 @@
+amount,description,date,category,Paymentmethod
+50.00,Groceries,2024-10-01,Food,Cash
+75.00,Utilities,2024-10-05,Bills,Credit
+20.00,Movie,2024-10-10,Entertainment,Cash
+100.00,Transport,2024-10-12,Travel,Credit
+30.00,Restaurant,2024-10-15,Food,Cash
+60.00,Online Subscription,2024-10-20,Entertainment,Credit
+45.00,Gas,2024-10-22,Transport,Cash
+200.00,Clothing,2024-10-25,Shopping,Credit
