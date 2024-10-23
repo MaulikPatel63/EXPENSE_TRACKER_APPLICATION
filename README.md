@@ -102,7 +102,7 @@ To run this project, you will need to add the following environment variables to
 
 The backend is deployed on Render.
 
-- **Live Backend URL :** [https://expense-tracker-application-zohe.onrender.com/](https://expense-tracker-application-zohe.[onrender](https://expense-tracker-application-zohe.onrender.com/).com/)
+- **Live Backend URL :** [https://expense-tracker-application-zohe.onrender.com/](https://expense-tracker-application-zohe.onrender.com/)
 
 
 ## API Reference
